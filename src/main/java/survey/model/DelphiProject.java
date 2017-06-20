@@ -1,14 +1,24 @@
 package survey.model;
 
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
+@Entity
 public class DelphiProject {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String projectName;
     private String themeName;
     private String description;
     private Date startDate;
     private Date endDate;
+
+    @OneToMany(targetEntity = Dimension.class, mappedBy = "delphiProject",
+            cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Dimension> dimensions;
 
     public DelphiProject() {
     }
@@ -59,5 +69,13 @@ public class DelphiProject {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public List<Dimension> getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(List<Dimension> dimensions) {
+        this.dimensions = dimensions;
     }
 }
