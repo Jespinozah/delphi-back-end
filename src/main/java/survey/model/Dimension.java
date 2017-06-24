@@ -10,6 +10,8 @@ public class Dimension {
     private int id;
     private String name;
 
+    private transient int delphiProjectId;
+
     @ManyToOne
     @JoinColumn(name = "id_delphi_project")
     private DelphiProject delphiProject;
@@ -51,5 +53,13 @@ public class Dimension {
 
     public void setDrivers(List<Driver> drivers) {
         this.drivers = drivers;
+    }
+
+    public int getDelphiProjectId() {
+        return delphiProjectId;
+    }
+
+    public void setDelphiProjectId(int delphiProjectId) {
+        this.delphiProjectId = delphiProjectId;
     }
 }

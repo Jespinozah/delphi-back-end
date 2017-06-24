@@ -3,6 +3,7 @@ package survey.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import survey.model.Dimension;
+import survey.repository.DelphiProjectRepository;
 import survey.repository.DimensionRepository;
 
 import java.util.List;
@@ -13,11 +14,15 @@ public class DimensionService {
     @Autowired
     private DimensionRepository dimensionRepository;
 
+    @Autowired
+    private DelphiProjectRepository delphiProjectRepository;
+
     public List<Dimension> getAllDimension() {
         return dimensionRepository.findAll();
     }
 
     public void addDimension(Dimension dimension) {
+        dimension.setDelphiProject(delphiProjectRepository.findOne(dimension.getDelphiProjectId()));
         dimensionRepository.saveAndFlush(dimension);
     }
 

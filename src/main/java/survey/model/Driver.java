@@ -11,6 +11,8 @@ public class Driver {
     private int round;
     private double ranking;
 
+    private transient int dimensionId;
+
     @ManyToOne
     @JoinColumn(name = "id_dimension")
     private Dimension dimension;
@@ -56,5 +58,13 @@ public class Driver {
 
     public void setDimension(Dimension dimension) {
         this.dimension = dimension;
+    }
+
+    public int getDimensionId() {
+        return dimensionId;
+    }
+
+    public void setDimensionId(int dimensionId) {
+        this.dimensionId = dimensionId;
     }
 }
