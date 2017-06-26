@@ -4,6 +4,7 @@ package survey.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
+import survey.dto.DimensionDto;
 import survey.model.Dimension;
 import survey.service.DimensionService;
 
@@ -17,7 +18,7 @@ public class DimensionController {
     private DimensionService dimensionService;
 
     @RequestMapping("/dimensions")
-    public List<Dimension> getAllDimensions() {
+    public List<DimensionDto> getAllDimensions() {
         return dimensionService.getAllDimension();
     }
 

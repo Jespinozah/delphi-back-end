@@ -2,6 +2,8 @@ package survey.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import survey.dto.DelphiProjectDto;
+import survey.mapper.ManagementMapper;
 import survey.model.DelphiProject;
 import survey.repository.DelphiProjectRepository;
 
@@ -12,10 +14,14 @@ import java.util.List;
 public class DelphiProjectService {
 
     @Autowired
+    private ManagementMapper managementMapper;
+
+    @Autowired
     private DelphiProjectRepository delphiProjectRepository;
 
-    public List<DelphiProject> getAllDelphiProjects() {
-        return delphiProjectRepository.findAll();
+    public List<DelphiProjectDto> getAllDelphiProjects() {
+        List<DelphiProject> delphiProjectList = delphiProjectRepository.findAll();
+        return managementMapper.convertDelphiProjectListToDelphiProjectDTOList(delphiProjectList);
     }
 
     public void addDelphiProject(DelphiProject delphiProject) {

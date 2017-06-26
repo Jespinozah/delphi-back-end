@@ -2,6 +2,7 @@ package survey.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import survey.dto.DelphiProjectDto;
 import survey.model.DelphiProject;
 import survey.service.DelphiProjectService;
 
@@ -15,7 +16,7 @@ public class DelphiProjectController {
     private DelphiProjectService delphiProjectService;
 
     @RequestMapping("/projects")
-    public List<DelphiProject> getAllDelphiProjects() {
+    public List<DelphiProjectDto> getAllDelphiProjects() {
         return delphiProjectService.getAllDelphiProjects();
     }
 

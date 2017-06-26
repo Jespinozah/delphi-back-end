@@ -2,6 +2,7 @@ package survey.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import survey.dto.DriverDto;
 import survey.model.Driver;
 import survey.service.DriverService;
 
@@ -15,7 +16,7 @@ public class DriverController {
     private DriverService driverService;
 
     @RequestMapping("/drivers")
-    public List<Driver> getAllDrivers() {
+    public List<DriverDto> getAllDrivers() {
         return driverService.getAllDriver();
     }
 

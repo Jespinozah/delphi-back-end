@@ -2,6 +2,8 @@ package survey.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import survey.dto.DimensionDto;
+import survey.mapper.ManagementMapper;
 import survey.model.Dimension;
 import survey.repository.DelphiProjectRepository;
 import survey.repository.DimensionRepository;
@@ -12,13 +14,17 @@ import java.util.List;
 public class DimensionService {
 
     @Autowired
+    private ManagementMapper managementMapper;
+
+    @Autowired
     private DimensionRepository dimensionRepository;
 
     @Autowired
     private DelphiProjectRepository delphiProjectRepository;
 
-    public List<Dimension> getAllDimension() {
-        return dimensionRepository.findAll();
+    public List<DimensionDto> getAllDimension() {
+        List<Dimension> dimensionList = dimensionRepository.findAll();
+        return managementMapper.convertDimensionListToDimensionDTOList(dimensionList);
     }
 
     public void addDimension(Dimension dimension) {

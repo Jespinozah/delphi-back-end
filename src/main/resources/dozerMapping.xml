@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <mapping map-id="driverToDriverDTO">
+        <class-a>survey.model.Driver</class-a>
+        <class-b>survey.dto.DriverDto</class-b>
+        <field>
+            <a is-accessible="true">id</a>
+            <b is-accessible="true">id</b>
+        </field>
+        <field>
+            <a is-accessible="true">name</a>
+            <b is-accessible="true">name</b>
+        </field>
+        <field>
+            <a is-accessible="true">round</a>
+            <b is-accessible="true">round</b>
+        </field>
+        <field>
+            <a is-accessible="true">ranking</a>
+            <b is-accessible="true">ranking</b>
+        </field>
+        <field>
+            <a is-accessible="true">dimensionId</a>
+            <b is-accessible="true">dimensionId</b>
+        </field>
+        <field>
+            <a is-accessible="true">dimension</a>
+            <b is-accessible="true">dimension</b>
+        </field>
+
+    </mapping>
+
+    <mapping map-id="dimensionToDimensionDTO">
+        <class-a>survey.model.Dimension</class-a>
+        <class-b>survey.dto.DimensionDto</class-b>
+        <field>
+            <a is-accessible="true">id</a>
+            <b is-accessible="true">id</b>
+        </field>
+        <field>
+            <a is-accessible="true">name</a>
+            <b is-accessible="true">name</b>
+        </field>
+        <field>
+            <a is-accessible="true">delphiProjectId</a>
+            <b is-accessible="true">delphiProjectId</b>
+        </field>
+        <field>
+            <a is-accessible="true">delphiProject</a>
+            <b is-accessible="true">delphiProject</b>
+        </field>
+        <field>
+            <a is-accessible="true">drivers</a>
+            <b is-accessible="true">drivers</b>
+        </field>
+    </mapping>
+
+
+    <mapping map-id="delphiProjectToDelphiProjectDTO">
+        <class-a>survey.model.DelphiProject</class-a>
+        <class-b>survey.dto.DelphiProjectDto</class-b>
+        <field>
+            <a is-accessible="true">id</a>
+            <b is-accessible="true">id</b>
+        </field>
+        <field>
+            <a is-accessible="true">projectName</a>
+            <b is-accessible="true">projectName</b>
+        </field>
+        <field>
+            <a is-accessible="true">themeName</a>
+            <b is-accessible="true">themeName</b>
+        </field>
+        <field>
+            <a is-accessible="true">startDate</a>
+            <b is-accessible="true">startDate</b>
+        </field>
+        <field>
+            <a is-accessible="true">endDate</a>
+            <b is-accessible="true">endDate</b>
+        </field>
+        <field>
+            <a is-accessible="true">dimensions</a>
+            <b is-accessible="true">dimensions</b>
+        </field>
+    </mapping>
+
+</mappings>

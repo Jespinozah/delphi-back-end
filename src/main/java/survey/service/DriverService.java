@@ -2,6 +2,8 @@ package survey.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import survey.dto.DriverDto;
+import survey.mapper.ManagementMapper;
 import survey.model.Driver;
 import survey.repository.DimensionRepository;
 import survey.repository.DriverRepository;
@@ -12,13 +14,17 @@ import java.util.List;
 public class DriverService {
 
     @Autowired
+    private ManagementMapper managementMapper;
+
+    @Autowired
     private DriverRepository driverRepository;
 
     @Autowired
     private DimensionRepository dimensionRepository;
 
-    public List<Driver> getAllDriver() {
-        return driverRepository.findAll();
+    public List<DriverDto> getAllDriver() {
+        List<Driver> driverList = driverRepository.findAll();
+        return managementMapper.convertDriverListToDriverDTOList(driverList);
     }
 
     public void addDriver(Driver driver) {
