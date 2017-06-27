@@ -25,10 +25,10 @@
             <a is-accessible="true">dimensionId</a>
             <b is-accessible="true">dimensionId</b>
         </field>
-        <field>
-            <a is-accessible="true">dimension</a>
-            <b is-accessible="true">dimension</b>
-        </field>
+        <!--<field>-->
+            <!--<a is-accessible="true">dimension</a>-->
+            <!--<b is-accessible="true">dimension</b>-->
+        <!--</field>-->
 
     </mapping>
 
@@ -47,10 +47,10 @@
             <a is-accessible="true">delphiProjectId</a>
             <b is-accessible="true">delphiProjectId</b>
         </field>
-        <field>
-            <a is-accessible="true">delphiProject</a>
-            <b is-accessible="true">delphiProject</b>
-        </field>
+        <!--<field>-->
+            <!--<a is-accessible="true">delphiProject</a>-->
+            <!--<b is-accessible="true">delphiProject</b>-->
+        <!--</field>-->
         <field>
             <a is-accessible="true">drivers</a>
             <b is-accessible="true">drivers</b>
