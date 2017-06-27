@@ -32,8 +32,9 @@ public class DriverService {
         driverRepository.saveAndFlush(driver);
     }
 
-    public Driver getDriver(int id) {
-        return driverRepository.findOne(id);
+    public DriverDto getDriver(int id) {
+        Driver driver = driverRepository.findOne(id);
+        return managementMapper.convertDriverToDriverDto(driver);
     }
 
     public void updateDriver(Driver driver, int id) {

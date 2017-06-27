@@ -28,8 +28,9 @@ public class DelphiProjectService {
         delphiProjectRepository.saveAndFlush(delphiProject);
     }
 
-    public DelphiProject getDelphiProject(int id) {
-        return delphiProjectRepository.findOne(id);
+    public DelphiProjectDto getDelphiProject(int id) {
+        DelphiProject delphiProject = delphiProjectRepository.findOne(id);
+        return managementMapper.convertDelphiProjectToDelphiProjectDto(delphiProject);
     }
 
     public void updateDelphiProject(DelphiProject delphiProject) {

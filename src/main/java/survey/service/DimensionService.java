@@ -32,8 +32,9 @@ public class DimensionService {
         dimensionRepository.saveAndFlush(dimension);
     }
 
-    public Dimension getDimension(int id) {
-        return dimensionRepository.findOne(id);
+    public DimensionDto getDimension(int id) {
+        Dimension dimension = dimensionRepository.findOne(id);
+        return managementMapper.convertDimensionToDimensionDto(dimension);
     }
 
     public void updateDimension(Dimension dimension, int id) {
