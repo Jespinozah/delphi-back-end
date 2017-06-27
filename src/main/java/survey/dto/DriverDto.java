@@ -9,7 +9,7 @@ public class DriverDto {
 
     private transient int dimensionId;
 
-    private DimensionDto dimension;
+//    private DimensionDto dimension;
 
     public DriverDto() {
     }
@@ -46,13 +46,13 @@ public class DriverDto {
         this.ranking = ranking;
     }
 
-    public DimensionDto getDimension() {
-        return dimension;
-    }
-
-    public void setDimension(DimensionDto dimension) {
-        this.dimension = dimension;
-    }
+//    public DimensionDto getDimension() {
+//        return dimension;
+//    }
+//
+//    public void setDimension(DimensionDto dimension) {
+//        this.dimension = dimension;
+//    }
 
     public int getDimensionId() {
         return dimensionId;

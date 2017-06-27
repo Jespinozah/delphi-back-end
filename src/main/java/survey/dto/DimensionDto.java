@@ -32,13 +32,13 @@ public class DimensionDto {
         this.name = name;
     }
 
-    public DelphiProjectDto getDelphiProject() {
-        return delphiProject;
-    }
-
-    public void setDelphiProject(DelphiProjectDto delphiProject) {
-        this.delphiProject = delphiProject;
-    }
+//    public DelphiProjectDto getDelphiProject() {
+//        return delphiProject;
+//    }
+//
+//    public void setDelphiProject(DelphiProjectDto delphiProject) {
+//        this.delphiProject = delphiProject;
+//    }
 
     public List<DriverDto> getDrivers() {
         return drivers;
