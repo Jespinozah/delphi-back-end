@@ -23,7 +23,7 @@ public class DimensionController {
     }
 
     @RequestMapping("/dimensions/{id}")
-    public Dimension getDimension(@PathVariable int id) {
+    public DimensionDto getDimension(@PathVariable int id) {
         return dimensionService.getDimension(id);
     }
 

@@ -21,7 +21,7 @@ public class DelphiProjectController {
     }
 
     @RequestMapping("/projects/{id}")
-    public DelphiProject getDelphiProject(@PathVariable int id) {
+    public DelphiProjectDto getDelphiProject(@PathVariable int id) {
         return delphiProjectService.getDelphiProject(id);
     }
 

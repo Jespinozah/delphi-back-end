@@ -21,7 +21,7 @@ public class DriverController {
     }
 
     @RequestMapping("/drivers/{id}")
-    public Driver getDriver(@PathVariable int id) {
+    public DriverDto getDriver(@PathVariable int id) {
         return driverService.getDriver(id);
     }
 
