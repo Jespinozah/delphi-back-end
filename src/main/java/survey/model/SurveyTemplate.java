@@ -1,14 +1,23 @@
 package survey.model;
 
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
+@Entity
 public class SurveyTemplate {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String indicaciones;
     private boolean status;
     private Date startDate;
     private Date endDate;
+
+    @OneToMany(targetEntity = SurveyDriverTemplate.class, mappedBy = "surveyTemplate",
+            cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<SurveyDriverTemplate> surveyDriverTemplates;
 
     public SurveyTemplate() {
     }
@@ -59,5 +68,13 @@ public class SurveyTemplate {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public List<SurveyDriverTemplate> getSurveyDriverTemplates() {
+        return surveyDriverTemplates;
+    }
+
+    public void setSurveyDriverTemplates(List<SurveyDriverTemplate> surveyDriverTemplates) {
+        this.surveyDriverTemplates = surveyDriverTemplates;
     }
 }
